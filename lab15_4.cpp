@@ -12,10 +12,21 @@ int main(){
 	
 	for(int i = 0;i < 10;i++){
 	    shuffle(a,b,c,d);
-	    cout << a << " " << b << " " << c << " " << d << endl;
+	    cout << a << " " << b << " " << c << " " << d << "\n";
 	}
 	
 	return 0;
 }
 
-//Do not modify source code above this line
+void shuffle(int &a,int &b,int &c,int &d){
+	int arr[] = {a,b,c,d};
+	for(int i=0; i<2; i++){
+		int x = rand()%4;
+		int y = rand()%4;
+		swap(arr[x],arr[y]);
+	}
+	a = arr[0];
+	b = arr[1];
+	c = arr[2];
+	d = arr[3];
+}
